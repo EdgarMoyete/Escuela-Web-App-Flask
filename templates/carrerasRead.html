@@ -1,0 +1,33 @@
+{% extends "baseGeneric.html" %}
+
+{% block title %}
+    Carreras
+{% endblock %}
+
+{% block content %}
+    <form action="/carreras/create" method="POST">
+        <input type="text" class="form-control" name="carrera" placeholder="carrera">
+        <input type="submit" class="btn btn-primary">
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID Carrera</th>
+                <th scope="col">Carrera</th>
+                <th scope="col">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in object_list %}
+                <tr>
+                    <td>{{item.id_carrera}}</td>
+                    <td>{{item.carrera}}</td>
+                    <td>
+                        <a class="link-primary" href="{{url_for('carreras.update', id=item.id_carrera)}}">Actualizar</a>
+                        <a class="link-danger" href="{{url_for('carreras.delete', id=item.id_carrera)}}">Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

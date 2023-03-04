@@ -1,0 +1,17 @@
+{% extends "baseGeneric.html" %}
+
+{% block title %}
+    Actualizar Carreras
+{% endblock %}
+
+{% block content %}
+    <form action="/carreras/update/{{object.id_carrera}}" method="POST">
+        <input
+            type="text"
+            class="form-control"
+            name="carrera"
+            placeholder="carrera"
+            value="{{object.carrera}}">
+        <input type="submit" class="btn btn-primary">
+    </form>
+{% endblock %}
