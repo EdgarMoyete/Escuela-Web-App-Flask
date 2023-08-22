@@ -18,8 +18,8 @@ DATABASE_CONNECTION_URI = f"postgresql://{PGSQL_USER}:{PGSQL_PASSWORD}@{PGSQL_HO
 app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_CONNECTION_URI
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 SQLAlchemy(app)
-with app.app_context():
-    db.create_all()
+# with app.app_context():
+#     db.create_all()
 # db.init_app(app)
 
 @app.route("/")
