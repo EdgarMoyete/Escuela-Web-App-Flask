@@ -20,7 +20,7 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 SQLAlchemy(app)
 # with app.app_context():
 #     db.create_all()
-# db.init_app(app)
+db.init_app(app)
 
 @app.route("/")
 def index():
