@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from flask_sqlalchemy import SQLAlchemy
+# from flask_sqlalchemy import SQLAlchemy
 from decouple import config
 
 from models.db import db
@@ -17,7 +17,7 @@ PGSQL_DATABASE = config("PGSQL_DATABASE")
 DATABASE_CONNECTION_URI = f"postgresql://{PGSQL_USER}:{PGSQL_PASSWORD}@{PGSQL_HOST}:{PGSQL_PORT}/{PGSQL_DATABASE}"
 app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_CONNECTION_URI
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-SQLAlchemy(app)
+# SQLAlchemy(app)
 # with app.app_context():
 #     db.create_all()
 db.init_app(app)
